@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getId(){
+                let search = new URLSearchParams(window.location.search);
+                let id = search.get("id");
+                return id;
+            }
+
+
+            let id =getId();
+            fetch(`http://localhost:5000/products/${id}`,{
+                method:"DELETE",
+            })
+            window.location.href="products.html"
+    </script>
+</body>
+</html>
